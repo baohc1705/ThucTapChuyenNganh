@@ -34,19 +34,22 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
                     </span>
             </button>
-            <div id="dropdownDelay" class="z-50 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+            <div id="dropdownDelay"
+                 class="z-50 hidden bg-indigo-50 divide-y divide-gray-100 rounded-lg shadow-sm w-44
+                    border-t border-indigo-500"
+            >
+                <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownDelayButton">
                     <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        <a th:href="@{/books/shop}" class="block px-4 py-2 hover:bg-indigo-100 ">Danh mục sản phẩm</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                        <a href="#newBook" class="block px-4 py-2 hover:bg-indigo-100 ">Sản phẩm mới</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                        <a href="#combo" class="block px-4 py-2 hover:bg-indigo-100 ">Combo</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                        <a href="#contact" class="block px-4 py-2 hover:bg-indigo-100">Liên hệ</a>
                     </li>
                 </ul>
             </div>
@@ -77,6 +80,7 @@
                 <button
                         type="button"
                         class="flex flex-col justify-center items-center"
+                        onclick="window.location.href='/unibook/carts/view'"
                 >
                         <span class="text-indigo-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>

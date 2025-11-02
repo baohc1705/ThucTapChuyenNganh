@@ -1,15 +1,14 @@
-package com.baoduy.UniBook.controller;
+package com.baoduy.UniBook.controller.cart;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
-
-    @GetMapping("/")
-    public String viewHomePage() {
-        return "index";
+@RequestMapping("/carts")
+public class CartController {
+    @GetMapping("/view")
+    public String viewCart() {
+        return "page/cart";
     }
-
 }
