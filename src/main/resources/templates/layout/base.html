@@ -17,17 +17,19 @@
 
     <link rel="stylesheet" th:href="@{'/css/output.css'}">
 </head>
-<body>
-    <!--Gọi fragment navbar-->
+<body class="scroll-smooth">
+    <!--Đây là nơi dùng để gọi các fragment không chạy file này-->
+    <!--Các template khác sẽ được render thông qua base.html không chạy file của chính nó-->
     <header>
         <nav th:replace="~{layout/header :: header}"></nav>
     </header>
 
-    <main class="mt-20">
+    <main class="mt-20 ">
         <div th:replace="${content}"></div>
     </main>
 
     <footer th:replace="~{layout/footer :: footer}"></footer>
+
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>

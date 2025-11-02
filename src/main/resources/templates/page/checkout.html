@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: parent(~{::#content}, ~{::title})}"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán</title>
+</head>
+<body>
+<div id="content" class="bg-linear-to-br from-white via-indigo-50 to-violet-50">
+    <section class="container mx-auto px-4 py-4 ">
+        <nav aria-label="Breadcrumb" class="flex py-4">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a class="inline-flex items-center text-sm font-medium text-indigo-700 hover:text-indigo-900" href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                        Trang chủ
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-4 h-4 text-indigo-400" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd">
+                            </path>
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-indigo-700 cursor-pointer hover:text-indigo-700">
+                                Giỏ hàng
+                            </span>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-4 h-4 text-indigo-400" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd">
+                            </path>
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-indigo-900">
+                                Thanh toán
+                            </span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-8">
+                <div class="bg-white rounded-2xl p-6">
+                    <h2 class="text-xl text-indigo-950 font-semibold mb-6">ĐIA CHỈ GIAO HÀNG</h2>
+
+                    <form>
+                        <div class="mb-6">
+                            <p class="text-base font-medium mb-4">Thông tin cá nhân người nhận</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-indigo-700 mb-2">Họ tên người nhận</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required/>
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-indigo-700 mb-2">Số điện thoại</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-indigo-700 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent mb-3" required/>
+                                    <button type="button" class="w-full bg-indigo-800 text-white py-2 px-4 rounded-lg hover:bg-indigo-950 transition flex items-center justify-center gap-2">
+                                        <span>Gửi xác minh</span>
+                                    </button>
+                                </div>
+                                <div>
+                                    <label for="otp" class="block text-sm font-medium text-indigo-700 mb-2">Nhập vào OTP</label>
+                                    <input type="text" id="otp" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent mb-3" required/>
+                                    <button type="button" class="w-full bg-indigo-800 text-white py-2 px-4 rounded-lg hover:bg-indigo-950 transition">Xác minh</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-base font-medium mb-4">Thông tin địa chỉ nhận hàng</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                            <div>
+                                <label for="city" class="block text-sm font-medium text-indigo-700 mb-2">Tỉnh/Thành phố</label>
+                                <select id="city" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                                    <option value="" disabled selected>--Chọn tỉnh/thành phố--</option>
+                                    <option value="hanoi">Hà Nội</option>
+                                    <option value="hcm">TP. Hồ Chí Minh</option>
+                                    <option value="danang">Đà Nẵng</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="district" class="block text-sm font-medium text-indigo-700 mb-2">Huyện/Quận</label>
+                                <select id="district" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                                    <option value="" disabled selected>--Chọn Huyện/Quận--</option>
+                                    <option value="quan8">Quận 8</option>
+                                    <option value="quan9">Quận 9</option>
+                                    <option value="tanhong">Tân Hồng</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="ward" class="block text-sm font-medium text-indigo-700 mb-2">Xã/Phường</label>
+                                <select id="ward" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                                    <option value="" disabled selected>--Chọn Xã/Phường--</option>
+                                    <option value="phuong4">Phường 4</option>
+                                    <option value="phuong5">Phường 5</option>
+                                    <option value="tanhoco">Tân Hộ Cơ</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="address" class="block text-sm font-medium text-indigo-700 mb-2">Ấp/Đường</label>
+                            <input type="text" id="address" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required/>
+                        </div>
+
+                        <div>
+                            <label for="note" class="block text-sm font-medium text-indigo-700 mb-2">Ghi chú</label>
+                            <textarea id="note" rows="3" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="bg-white rounded-2xl p-6 mb-6">
+                    <h2 class="text-xl text-indigo-950 font-semibold mb-4">PHƯƠNG THỨC VẬN CHUYỂN</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <input type="radio" id="delivery1" name="delivery" value="express" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500"/>
+                            <label for="delivery1" class="ml-3 text-sm">
+                                <span class="font-medium">Giao hàng nhanh</span>
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="delivery2" name="delivery" value="standard" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500" checked/>
+                            <label for="delivery2" class="ml-3 text-sm">
+                                <span class="font-medium">Giao hàng tiêu chuẩn</span>
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="delivery3" name="delivery" value="economy" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500"/>
+                            <label for="delivery3" class="ml-3 text-sm">
+                                <span class="font-medium">Giao hàng tiết kiệm</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6">
+                    <h2 class="text-xl text-indigo-950 font-semibold mb-4">PHƯƠNG THỨC THANH TOÁN</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <input type="radio" id="vnpay" name="payment" value="vnpay" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500"/>
+                            <label for="vnpay" class="ml-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600">
+                                    <rect width="20" height="14" x="2" y="5" rx="2"/>
+                                    <line x1="2" x2="22" y1="10" y2="10"/>
+                                </svg>
+                                <span class="ml-2 text-sm font-medium">VNPay</span>
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="cod" name="payment" value="cod" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500" checked/>
+                            <label for="cod" class="ml-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                                    <rect width="20" height="12" x="2" y="6" rx="2"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                    <path d="M6 12h.01M18 12h.01"/>
+                                </svg>
+                                <span class="ml-2 text-sm font-medium">Thanh toán khi nhận hàng (COD)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 mt-6">
+            <h2 class="text-xl text-indigo-950 font-semibold mb-4">KIỂM TRA LẠI ĐƠN HÀNG</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <tbody class="divide-y divide-indigo-200">
+                    <tr>
+                        <td class="py-4 w-24">
+                            <img th:src="@{'/images/books/biet-khi-nao-moi-gap-nhau-bia.png'}" alt="Book" class="object-contain h-24"/>
+                        </td>
+                        <td class="py-4 px-4">
+                            <p class="text-sm  overflow-hidden text-ellipsis line-clamp-1">Đắc Nhân Tâm - How to Win Friends and Influence People</p>
+                        </td>
+                        <td class="py-4 px-4 text-center w-20">
+                            <span class="text-sm">2</span>
+                        </td>
+                        <td class="py-4 px-4 text-right w-32">
+                            <span class="text-red-600 font-semibold text-sm">172.000 đ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 w-24">
+                            <img th:src="@{'/images/books/spiderman-3-cover.jpg'}" alt="Book" class="object-contain h-24"/>
+                        </td>
+                        <td class="py-4 px-4">
+                            <p class="text-sm overflow-hidden text-ellipsis line-clamp-1">Nhà Giả Kim - The Alchemist</p>
+                        </td>
+                        <td class="py-4 px-4 text-center w-20">
+                            <span class="text-sm">1</span>
+                        </td>
+                        <td class="py-4 px-4 text-right w-32">
+                            <span class="text-red-600 font-semibold text-sm">72.000 đ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 w-24">
+                            <img th:src="@{'/images/books/toi-uu-toan-dien-website-bia.png'}" alt="Book" class="object-contain h-24"/>
+                        </td>
+                        <td class="py-4 px-4">
+                            <p class="text-sm overflow-hidden text-ellipsis line-clamp-1">Sapiens: Lược Sử Loài Người</p>
+                        </td>
+                        <td class="py-4 px-4 text-center w-20">
+                            <span class="text-sm">1</span>
+                        </td>
+                        <td class="py-4 px-4 text-right w-32">
+                            <span class="text-red-600 font-semibold text-sm">135.000 đ</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="sticky bottom-0 bg-white shadow-lg p-6 mt-4">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div class="flex items-center">
+                    <input type="checkbox" id="agree" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 rounded" checked/>
+                    <label for="agree" class="ml-2 text-sm text-indigo-700">Đồng ý với điều khoản thanh toán của hiBook.com</label>
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>Thành tiền</span>
+                            <span>379.000 đ</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Phí vận chuyển</span>
+                            <span>30.000 đ</span>
+                        </div>
+                        <hr class="border-indigo-200"/>
+                        <div class="flex justify-between font-bold text-lg">
+                            <span>Tổng tiền</span>
+                            <span class="text-red-600">409.000 đ</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full mt-4 bg-indigo-800 text-white py-3 rounded-xl font-semibold hover:bg-indigo-950 transition" >
+                        XÁC NHẬN THANH TOÁN
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
