@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section th:fragment="NewBook" id="newBook" class="w-full p-4 bg-linear-to-br from-indigo-50 to-purple-50 relative overflow-hidden">
+    <div class="hidden md:block text-left mb-4">
+        <svg class="w-16 h-16 text-indigo-900 opacity-30" viewBox="0 0 64 64" fill="currentColor">
+            <circle cx="10" cy="10" r="4"/>
+            <circle cx="30" cy="10" r="4"/>
+            <circle cx="50" cy="10" r="4"/>
+            <circle cx="10" cy="30" r="4"/>
+            <circle cx="30" cy="30" r="4"/>
+            <circle cx="50" cy="30" r="4"/>
+            <circle cx="10" cy="50" r="4"/>
+            <circle cx="30" cy="50" r="4"/>
+            <circle cx="50" cy="50" r="4"/>
+        </svg>
+    </div>
+
+    <div class="flex flex-col lg:flex-row justify-center items-start gap-8 max-w-7xl mx-auto">
+        <div class="w-full lg:w-1/2 px-4">
+            <h1 class="text-2xl md:text-5xl font-bold text-indigo-800 mb-2 font-header tracking-widest">Sách
+                mới</h1>
+            <p class="mb-4 text-sm md:text-md text-indigo-900 tracking-wide">Tuyển tập sách mới cập nhật</p>
+            <div class="bg-white rounded-3xl p-8 flex flex-col md:flex-row gap-6 shadow-2xl shadow-indigo-300/50">
+
+                <div class="w-full md:w-1/2 text-center cursor-pointer transition-transform hover:scale-105">
+                    <img
+                            th:src="@{'/images/books/conan-bia.jpg'}"
+                            alt="Book Cover"
+                            class="w-32 md:w-full max-w-[200px] h-auto mx-auto object-contain"
+                    />
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="hidden md:block">
+                            <img
+                                    th:src="@{'/images/icon/new-icon.png'}"
+                                    alt="..."
+                                    class="w-15"
+                            />
+                        </div>
+                        <p class="font-bold text-md md:text-lg leading-tight">Biết khi nào mới gặp lại nhau</p>
+                    </div>
+
+                    <ul class="flex gap-2 mb-4 p-0">
+                        <li class="text-sm px-3 py-1 rounded border border-green-500 text-green-500">
+                            <a href="#" class="no-underline">Tiểu thuyết</a>
+                        </li>
+                    </ul>
+
+                    <p class="text-xs md:text-sm leading-relaxed mb-4 line-clamp-2 md:line-clamp-5 text-justify">
+                        Cuốn sách là tuyển tập 14 truyện ngắn về số phận, mảnh đời éo le, khắc nghiệt của con người
+                        miền Tây sông nước, làm bật lên sức sống kiên cường làm bật lên sức sống kiên cườnglàm bật
+                        lên sức sống kiên cườnglàm bật lên sức sống kiên cường
+                    </p>
+
+                    <a href="#"
+                       class="block mb-2 md:mb-4 font-bold text-indigo-950 no-underline text-sm md:text-base">Hoàng
+                        Khánh Duy</a>
+
+                    <div class="flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <p class="font-bold text-red-600 text-md md:text-xl m-0">40.000đ</p>
+                            <del class="text-gray-400 text-sm m-0">50.000đ</del>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <button class="text-sm px-1.5 py-0.5 md:px-4 md:py-2 border-2 border-indigo-900 text-indigo-900 bg-white rounded-lg hover:bg-indigo-50 transition-colors">
+                                Mua ngay
+                            </button>
+                            <button class="p-1.5 md:p-2 bg-indigo-900 text-white rounded-lg hover:bg-indigo-800 transition-colors flex items-center justify-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                             class="w-5 h-5 md:w-8 md:h-8 lucide lucide-shopping-bag-icon lucide-shopping-bag"><path
+                                                d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path
+                                                d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+                                    </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 md:px-4">
+            <div class="grid grid-cols-3 gap-5 p-5 bg-linear-to-br from-transparent to-purple-100/30 rounded-3xl">
+                <div class="bg-white rounded-xl shadow-lg p-3 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-indigo-400/50 cursor-pointer">
+                    <img th:src="@{'/images/books/dragonball-tap16-bia.png'}" alt="Book"
+                         class="w-full max-w-[150px] h-auto mx-auto rounded-lg"/>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-3 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-indigo-400/50 cursor-pointer">
+                    <img th:src="@{'/images/books/biet-khi-nao-moi-gap-nhau-bia.png'}" alt="Book"
+                         class="w-full max-w-[150px] h-auto mx-auto rounded-lg"/>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-3 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-indigo-400/50 cursor-pointer">
+                    <img th:src="@{'/images/books/hoang-hon-mau-do-bia.png'}" alt="Book"
+                         class="w-full max-w-[150px] h-auto mx-auto rounded-lg"/>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-3 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-indigo-400/50 cursor-pointer">
+                    <img th:src="@{'/images/books/spiderman-cover.jpg'}" alt="Book"
+                         class="w-full max-w-[150px] h-auto mx-auto rounded-lg"/>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-3 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-indigo-400/50 cursor-pointer">
+                    <img th:src="@{'/images/books/toi-uu-toan-dien-website-bia.png'}" alt="Book"
+                         class="w-full max-w-[150px] h-auto mx-auto rounded-lg"/>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-3 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-indigo-400/50 cursor-pointer">
+                    <img th:src="@{'/images/books/spiderman-3-cover.jpg'}" alt="Book"
+                         class="w-full max-w-[150px] h-auto mx-auto rounded-lg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="hidden md:block text-right mt-8">
+        <svg class="w-16 h-16 text-indigo-900 opacity-30 ml-auto rotate-180" viewBox="0 0 64 64"
+             fill="currentColor">
+            <circle cx="10" cy="10" r="4"/>
+            <circle cx="30" cy="10" r="4"/>
+            <circle cx="50" cy="10" r="4"/>
+            <circle cx="10" cy="30" r="4"/>
+            <circle cx="30" cy="30" r="4"/>
+            <circle cx="50" cy="30" r="4"/>
+            <circle cx="10" cy="50" r="4"/>
+            <circle cx="30" cy="50" r="4"/>
+            <circle cx="50" cy="50" r="4"/>
+        </svg>
+    </div>
+</section>
+</body>
+</html>
