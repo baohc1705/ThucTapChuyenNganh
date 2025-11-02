@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Hero section</title>
+</head>
+<body>
+    <section th:fragment="HeroSection" class="container grid grid-cols-1 md:grid-cols-4 mx-auto">
+    <div class="col-span-3 p-4">
+        <div id="default-carousel" class="relative h-56 md:h-[500px] z-0 w-full" data-carousel="slide">
+            <div class="relative h-full overflow-hidden rounded-xl ">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img th:src="@{'/images/banner/banner1.png'}" class="absolute block w-full h-full object-cover"
+                         alt="..."/>
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img th:src="@{'/images/banner/banner2.png'}" class="absolute block w-full h-full object-cover"
+                         alt="..."/>
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img th:src="@{'/images/banner/banner3.png'}" class="absolute block w-full h-full object-cover"
+                         alt="..."/>
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img th:src="@{'/images/banner/banner1.png'}" class="absolute block w-full h-full object-cover"
+                         alt="..."/>
+                </div>
+            </div>
+
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                        data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                        data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                        data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                        data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                        data-carousel-slide-to="4"></button>
+            </div>
+
+            <button type="button"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-indigo-500 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-indigo-500  rtl:rotate-180" aria-hidden="true"
+                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-indigo-500  group-focus:outline-none">
+                    <svg class="w-4 h-4 text-indigo-500  rtl:rotate-180" aria-hidden="true"
+                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class='p-4'>
+        <div id="carousel-bestseller-poster" class="relative z-0 h-[500px] rounded-2xl overflow-hidden"
+             data-carousel="static">
+            <div class="relative h-full overflow-hidden rounded-xl">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                    <div class="relative w-full h-full">
+
+                        <img th:src="@{'/images/books/biet-khi-nao-moi-gap-nhau-bia.png'}"
+                             alt="Book background"
+                             class="absolute block w-full h-full object-cover"/>
+
+
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-900/30 to-slate-900 backdrop-blur-sm">
+                            <h2 class="text-4xl font-paytone text-blue-50 mb-2 font-header">
+                                Best seller
+                            </h2>
+                            <p class="text-blue-50 mb-4">Based sales this week</p>
+
+                            <div class="rounded-3xl pb-2 mb-4">
+                                <a th:href="@{'/books/book'}">
+                                    <img th:src="@{'/images/books/biet-khi-nao-moi-gap-nhau-bia.png'}"
+                                         alt="Biết khi nào mới gặp lại nhau"
+                                         class="w-32 h-auto rounded-lg border border-blue-50"/>
+                                </a>
+                            </div>
+
+
+                            <p class="text-blue-50 mb-1">Biết khi nào mới gặp lại nhau</p>
+                            <p class="text-blue-50 mb-4">Tiểu thuyết</p>
+
+
+                            <button class="bg-blue-50 text-red-600 font-bold px-4 py-2 rounded">
+                                <del class="text-xs text-gray-400 mr-2">40.000 đ</del>
+                                40.000đ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="relative w-full h-full">
+
+                        <img th:src="@{'/images/books/hoang-hon-mau-do-bia.png'}"
+                             alt="Book background"
+                             class="absolute block w-full h-full object-cover"/>
+
+
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-900/30 to-slate-900 backdrop-blur-sm">
+                            <h2 class="text-4xl font-paytone text-blue-50 mb-2 font-header">
+                                Best seller
+                            </h2>
+                            <p class="text-blue-50 mb-4">Based sales this week</p>
+
+                            <div class="rounded-3xl pb-2 mb-4">
+                                <img th:src="@{'/images/books/hoang-hon-mau-do-bia.png'}"
+                                     alt="Hoàng hôn màu đỏ"
+                                     class="w-32 h-auto rounded-lg border border-blue-50"/>
+                            </div>
+
+
+                            <p class="text-blue-50 mb-1">Hoàng hôn màu đỏ</p>
+                            <p class="text-blue-50 mb-4">Tiểu thuyết</p>
+
+
+                            <button class="bg-blue-50 text-red-600 font-bold px-4 py-2 rounded">
+                                <del class="text-xs text-gray-400 mr-2">40.000 đ</del>
+                                40.000đ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="relative w-full h-full">
+
+                        <img th:src="@{/images/books/conan-bia.jpg}"
+                             alt="Book background"
+                             class="absolute block w-full h-full object-cover"/>
+
+
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-900/30 to-slate-900 backdrop-blur-sm">
+                            <h2 class="text-4xl font-paytone text-blue-50 mb-2 font-header">
+                                Best seller
+                            </h2>
+                            <p class="text-blue-50 mb-4">Based sales this week</p>
+
+
+                            <div class="rounded-3xl pb-2 mb-4">
+                                <img th:src="@{/images/books/conan-bia.jpg}"
+                                     alt="Dragon Ball Tập 16"
+                                     class="w-32 h-auto rounded-lg border border-blue-50"/>
+                            </div>
+
+
+                            <p class="text-blue-50 mb-1">Dragon Ball Tập 16</p>
+                            <p class="text-blue-50 mb-4">Manga</p>
+
+
+                            <button class="bg-blue-50 text-red-600 font-bold px-4 py-2 rounded">
+                                <del class="text-xs text-gray-400 mr-2">40.000 đ</del>
+                                40.000đ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button type="button"
+                    class="absolute top-1/2 left-4 z-30 flex items-center justify-center -translate-y-1/2 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                <span class="text-blue-50 hover:opacity-80 transition-opacity">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
+                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15.25 12H8.75M8.75 12L11.25 9.5M8.75 12L11.25 14.5"
+                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="sr-only">Previous</span>
+            </button>
+
+            <button type="button"
+                    class="absolute top-1/2 right-4 z-30 flex items-center justify-center -translate-y-1/2 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                <span class="text-blue-50 hover:opacity-80 transition-opacity">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.75 12H15.25M15.25 12L12.75 9.5M15.25 12L12.75 14.5"
+                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+</body>
+</html>
