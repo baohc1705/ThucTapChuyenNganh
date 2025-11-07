@@ -4,6 +4,8 @@
   --font-display: "Roboto", sans-serif;
   --font-header: "Momo Trust Display", sans-serif;
 }
+@custom-variant dark (&:where(.dark, .dark *));
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
