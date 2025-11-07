@@ -8,9 +8,16 @@
     <title>Trang quản trị viên</title>
 </head>
 <body>
-<div id="content">
-    <h1 class="text-blue-700">Đây la trang quản trị viên</h1>
-</div>
+<main id="content" class="flex-1 overflow-y-auto bg-transparent p-6 space-y-4">
+    <!--Stats Grid Section-->
+    <section th:replace="~{layout/admin/dashboard/StatsGrid :: StatsGrid}"></section>
+
+    <!--Charts-->
+    <section th:replace="~{layout/admin/dashboard/Chart :: Chart}"></section>
+
+
+</main>
 <script th:src="@{/js/admin/main.js}"></script>
+<script th:src="@{/js/admin/Charts.js}"></script>
 </body>
 </html>
