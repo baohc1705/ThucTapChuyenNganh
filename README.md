@@ -24,7 +24,10 @@
 
 ## Ảnh chụp màn hình
 - [Đang cập nhật...]
-
+![ADMIN](https://github.com/baohc1705/ThucTapChuyenNganh/blob/main/screenshot/admin1.png)  
+![HOMEPAGE](https://github.com/baohc1705/ThucTapChuyenNganh/blob/main/screenshot/home1.png)  
+![HOMEPAGE](https://github.com/baohc1705/ThucTapChuyenNganh/blob/main/screenshot/home2.png)
+![SHOP](https://github.com/baohc1705/ThucTapChuyenNganh/blob/main/screenshot/home3.png)  
 ---
 
 ## Ghi chú
