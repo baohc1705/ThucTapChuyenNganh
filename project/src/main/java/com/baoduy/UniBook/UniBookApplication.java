@@ -10,7 +10,7 @@ public class UniBookApplication {
         SpringApplication.run(UniBookApplication.class, args);
         System.out.println("===========================================");
         System.out.println("Ứng dụng đã khởi động thành công!");
-        System.out.println("Đường dẫn: http://localhost:8080/unibook");
+        System.out.println("Đường dẫn: http://localhost:8080/");
         System.out.println("===========================================");
     }
 }
