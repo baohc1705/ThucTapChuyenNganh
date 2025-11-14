@@ -34,4 +34,9 @@ public class AdminController {
     public String viewWarehouse() {
         return "admin/warehouse";
     }
+
+    @GetMapping("/admin/category")
+    public String viewCategory() {
+        return "admin/category";
+    }
 }

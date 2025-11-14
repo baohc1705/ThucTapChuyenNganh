@@ -9,7 +9,173 @@
     <title>Trang quản trị viên</title>
 </head>
 <body>
-<main layout:fragment="content" class="flex-1 overflow-y-auto bg-transparent p-6 space-y-4">
+<main layout:fragment="content">
+    <header class="px-4 py-2 md:px-6 md:py-4 bg-white/80 dark:bg-slate-900 border-b border-slate-200/50 dark:border-slate-700/50">
+        <div class="flex items-center justify-between">
+            <!-- Left section -->
+
+            <div class="hidden md:block">
+                <h1 class="uppercase text-2xl font-bold text-slate-800 dark:text-white font-header tracking-wider">
+                    Trang chủ
+                </h1>
+                <p class="text-slate-800 dark:text-white">
+                    Chào Brian! Hôm nay của bạn thế nào?
+                </p>
+            </div>
+
+            <div class="md:hidden flex items-center  justify-center p-4">
+                <div class="toggleMenu flex-1 flex items-center space-x-3 transition-all duration-200">
+                    <!-- Icon -->
+                    <img alt="logo"
+                         th:src="@{/images/icon/unibook-logo.png}"
+                         class="w-10 h-10"
+                    >
+
+                    <!-- Brand -->
+                    <div>
+                        <h1 class="bg-gradient-to-r from-violet-600 via-pink-500 to-orange-500 bg-clip-text text-transparent
+								   text-xl font-bold font-header tracking-wider">
+                            HiBook
+                        </h1>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">
+                            Admin Panel
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center -->
+            <div class="flex-1 max-w-md mx-2 md:mx-8">
+                <div class="relative">
+					<span class="text-xl text-slate-500 dark:text-slate-300
+								absolute top-1/2 transform -translate-y-1/2 md:left-1 xs-right-3 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-search-icon lucide-search">
+                            <path d="m21 21-4.34-4.34"/>
+                            <circle cx="11" cy="11" r="8"/>
+                        </svg>
+					</span>
+
+                    <input
+                            type="text"
+                            name="search"
+                            placeholder="Tìm kiếm"
+                            class="hidden md:block w-full pl-10 pr-4 py-2.5 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500
+                        transition-all duration-200 text-slate-800 dark:text-white placeholder-slate-500"
+                    >
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="flex items-center md:space-x-3">
+                <!-- Toggle dark mode -->
+                <button
+                        type="button"
+                        class="p-2 rounded-xl text-slate-500 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-700/50
+					flex items-center justify-center"
+                        id="btn-toggle-darkmode"
+                >
+
+                </button>
+
+                <!-- Notification -->
+                <button
+                        type="button"
+                        class="relative p-2 rounded-xl text-slate-500 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-700/50
+					flex items-center justify-center group relative"
+                >
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-bell-icon lucide-bell">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0"/>
+                            <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+                        </svg>
+					</span>
+
+                    <span class="w-5 h-5 rounded-full bg-red-500 text-xs text-white absolute top-0.5 right-0.5 z-10">9+</span>
+                    <div class="absolute top-full right-0 rounded-lg p-3 mt-1 shadow-md
+								scale-y-0 group-focus:scale-y-100 origin-top duration-200 z-50 bg-slate-500">
+                        <p>Home</p>
+                        <p>About</p>
+                        <p>Summary</p>
+                    </div>
+                </button>
+
+
+                <!-- Settings -->
+                <button
+                        type="button"
+                        class="p-2 rounded-xl text-slate-500 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-700/50
+					hidden md:flex items-center justify-center "
+                >
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-settings-icon lucide-settings">
+                            <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+					</span>
+
+                </button>
+
+                <!-- User profile -->
+                <div class="hidden md:flex items-center border-l border-slate-300 dark:border-slate-700 space-x-3 pl-3 group relative cursor-pointer">
+                    <img
+                            alt="avatar"
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                            class="w-10 h-10 rounded-full object-cover ring-2 ring-blue-500"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="w-5 h-5 lucide lucide-chevron-down-icon lucide-chevron-down text-slate-500 dark:text-slate-300 transform transition-all duration-200 group-hover:rotate-180">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+
+                    <div class="absolute top-full right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="p-4 border-b border-slate-200 dark:border-slate-700">
+                            <p class="text-sm font-bold text-slate-800 dark:text-white">Brian Bennet</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">brian@hibook.com</p>
+                        </div>
+                        <div class="p-2">
+                            <button class="w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Hồ sơ
+                            </button>
+                            <button class="w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                                Cài đặt
+                            </button>
+                        </div>
+                        <div class="p-2 border-t border-slate-200 dark:border-slate-700">
+                            <button class="w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                                Đăng xuất
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="flex-1 overflow-y-auto bg-transparent p-6 space-y-4">
     <!--Stats Grid Section-->
     <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         <div class="p-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-xl transition-all duration-200 group hover:shadow-xl hover:shadow-slate-200/20 dark:hover:shadow-slate-900/20">
@@ -768,6 +934,7 @@
             </div>
         </div>
     </section>
+    </div>
     <script th:src="@{/js/Charts.js}"></script>
 </main>
 </body>

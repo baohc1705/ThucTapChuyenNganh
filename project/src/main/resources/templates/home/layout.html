@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base page</title>
+    <title>Layout page</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,13 +65,13 @@
                                 phẩm</a>
                         </li>
                         <li>
-                            <a href="#newBook" class="block px-4 py-2 hover:bg-indigo-100 ">Sản phẩm mới</a>
+                            <a th:href="@{/sanphammoi}" class="block px-4 py-2 hover:bg-indigo-100 ">Sản phẩm mới</a>
                         </li>
                         <li>
-                            <a href="#combo" class="block px-4 py-2 hover:bg-indigo-100 ">Combo</a>
+                            <a th:href="@{/combo}" class="block px-4 py-2 hover:bg-indigo-100 ">Combo</a>
                         </li>
                         <li>
-                            <a href="#contact" class="block px-4 py-2 hover:bg-indigo-100">Liên hệ</a>
+                            <a th:href="@{'/contact'}" class="block px-4 py-2 hover:bg-indigo-100">Liên hệ</a>
                         </li>
                     </ul>
                 </div>
@@ -127,7 +127,7 @@
                     <span>Đăng ký</span>
                 </a>
                 <a
-                        th:href="@{'/'}"
+                        th:href="@{'/login'}"
                         class="hidden md:flex justify-center items-center  text-sm text-indigo-50 px-3 py-2 bg-indigo-500 rounded-full
                         cursor-pointer hover:bg-indigo-700 focus:outline-2 focus:outline-indigo-700 transition-all "
                 >

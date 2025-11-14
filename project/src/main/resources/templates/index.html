@@ -82,11 +82,9 @@
                 <div class="relative h-full overflow-hidden rounded-xl">
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                         <div class="relative w-full h-full">
-
                             <img th:src="@{'/images/books/biet-khi-nao-moi-gap-nhau-bia.png'}"
                                  alt="Book background"
                                  class="absolute block w-full h-full object-cover"/>
-
 
                             <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-900/30 to-slate-900 backdrop-blur-sm">
                                 <h2 class="text-4xl font-paytone text-blue-50 mb-2 font-header">
@@ -102,10 +100,8 @@
                                     </a>
                                 </div>
 
-
                                 <p class="text-blue-50 mb-1">Biết khi nào mới gặp lại nhau</p>
                                 <p class="text-blue-50 mb-4">Tiểu thuyết</p>
-
 
                                 <button class="bg-blue-50 text-red-600 font-bold px-4 py-2 rounded">
                                     <del class="text-xs text-gray-400 mr-2">40.000 đ</del>
@@ -121,7 +117,6 @@
                             <img th:src="@{'/images/books/hoang-hon-mau-do-bia.png'}"
                                  alt="Book background"
                                  class="absolute block w-full h-full object-cover"/>
-
 
                             <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-900/30 to-slate-900 backdrop-blur-sm">
                                 <h2 class="text-4xl font-paytone text-blue-50 mb-2 font-header">
@@ -149,7 +144,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <div class="relative w-full h-full">
@@ -333,7 +327,7 @@
                 <div class="flex md:grid md:grid-cols-4 gap-6 min-w-max md:min-w-0 pb-4">
                     <div class="bg-indigo-50 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow max-w-48 md:max-w-96">
                         <div class="flex justify-center mb-4 hover:transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                            <a th:href="@{'/books/book'}">
+                            <a th:href="@{'/book'}">
                                 <img th:src="@{'/images/books/biet-khi-nao-moi-gap-nhau-bia.png'}"
                                      alt="Book"
                                      class="h-36 md:h-48 w-auto object-contain rounded-lg"/>
@@ -677,7 +671,7 @@
     </section>
 
     <!--New book section-->
-    <section id="newBook" class="w-full p-4 bg-linear-to-br from-indigo-50 to-purple-50 relative overflow-hidden">
+    <section class="w-full p-4 bg-linear-to-br from-indigo-50 to-purple-50 relative overflow-hidden">
         <div class="hidden md:block text-left mb-4">
             <svg class="w-16 h-16 text-indigo-900 opacity-30" viewBox="0 0 64 64" fill="currentColor">
                 <circle cx="10" cy="10" r="4"/>

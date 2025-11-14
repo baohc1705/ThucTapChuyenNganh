@@ -28,4 +28,19 @@ public class HomeController {
     public String viewCheckout() {
         return "home/checkout";
     }
+
+    @GetMapping("/sanphammoi")
+    public String viewSanphammoi() {
+        return "home/sanphammoi";
+    }
+
+    @GetMapping("/combo")
+    public String combo() {
+        return "home/combo";
+    }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "home/contact";
+    }
 }
